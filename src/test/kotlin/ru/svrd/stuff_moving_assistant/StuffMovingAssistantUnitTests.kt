@@ -6,11 +6,12 @@ import org.mockito.Mockito.`when`
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
 import org.springframework.boot.test.mock.mockito.MockBean
-import org.springframework.http.MediaType.*
+import org.springframework.http.MediaType.APPLICATION_JSON
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers.*
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 import ru.svrd.stuff_moving_assistant.application.api.MovingControllerV1
 import ru.svrd.stuff_moving_assistant.domain.moving_box.CreateMovingBoxDto
 import ru.svrd.stuff_moving_assistant.domain.moving_box.MovingBox
@@ -24,7 +25,7 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 @WebMvcTest(MovingControllerV1::class)
-class StuffMovingAssistantAppTests {
+class StuffMovingAssistantUnitTests {
 
     @Autowired
     lateinit var mvc: MockMvc

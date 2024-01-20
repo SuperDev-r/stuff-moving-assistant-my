@@ -52,5 +52,4 @@ class MovingControllerV1(
     ): MovingBox {
         return movingBoxService.editExtras(sessionId, boxId, newItems)
     }
-
 }
